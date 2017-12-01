@@ -65,14 +65,16 @@ class BasicLayout extends React.Component {
         </Sider>
         <Layout>
           <Header>
-            <Dropdown overlay={menu} trigger={['click']}>
-              <Button className="ant-dropdown-link" href="#">
-                点我，快点我啊 <Icon type="down" />
-              </Button>
-            </Dropdown>
+            <div className={styles.header}>
+              <Dropdown overlay={menu} trigger={['click']}>
+                <Button className="ant-dropdown-link" href="#">
+                  点我，快点我啊 <Icon type="down" />
+                </Button>
+              </Dropdown>
+            </div>
           </Header>
           <Content>
-            <div style={{ minHeight: 'calc(100vh)' }}>
+            <div style={{ minHeight: 'calc(100vh)' }} className={styles.content}>
               <Breadcrumb>
                 <Breadcrumb.Item>首页</Breadcrumb.Item>
                 <Breadcrumb.Item><a href="">雷电 芽衣</a></Breadcrumb.Item>
@@ -85,7 +87,14 @@ class BasicLayout extends React.Component {
               <Spin size="large" />
             </div>
           </Content>
-          <Footer>脚底板</Footer>
+          <Footer>
+            <h3 className={styles.footer}>
+              <a href="http://pro.ant.design" Target="_blank">Pro首页</a>
+              <a href="https://github.com/xujixin11" Target="_blank">Github</a>
+              <a href="http://ant.design" Target="_blank">Ant Design</a>
+              <p>Copyright <Icon type="copyright" /> 2017 崩坏3官方部门总监徐基欣出品</p>
+            </h3>
+          </Footer>
         </Layout>
       </Layout>
     );
