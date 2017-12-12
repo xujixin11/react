@@ -2,6 +2,7 @@
  * 2017-11-27 Xu Jixin
  */
 import React from 'react';
+import { Link } from 'dva/router';
 import { Layout, Menu, Icon, Breadcrumb, Spin, Dropdown, Button } from 'antd';
 import styles from './BasicLayout.less';
 
@@ -26,8 +27,10 @@ class BasicLayout extends React.Component {
       <Layout>
         <Sider>
           <div className={styles.logo}>
-            <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
-            <h1>崩坏3rd</h1>
+            <Link to="/">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
+              <h1>崩坏3rd</h1>
+            </Link>
           </div>
           <div className={styles.sider}>
             <Menu
@@ -38,7 +41,7 @@ class BasicLayout extends React.Component {
             >
               <SubMenu key="sub1" title={<span><Icon type="mail" /><span>雷电 芽衣</span></span>}>
                 <MenuItemGroup key="g1" title="机械类">
-                  <Menu.Item key="1">影舞冲击</Menu.Item>
+                  <Menu.Item key="1"><Link className={styles.header} to="/a">影舞冲击</Link></Menu.Item>
                   <Menu.Item key="2">御神装·勿忘</Menu.Item>
                 </MenuItemGroup>
                 <MenuItemGroup key="g2" title="生物类">
@@ -89,10 +92,8 @@ class BasicLayout extends React.Component {
           </Content>
           <Footer>
             <h3 className={styles.footer}>
-              <a href="http://pro.ant.design" Target="_blank">Pro首页</a>
               <a href="https://github.com/xujixin11" Target="_blank">Github</a>
-              <a href="http://ant.design" Target="_blank">Ant Design</a>
-              <p>Copyright <Icon type="copyright" /> 2017 崩坏3官方部门总监徐基欣出品</p>
+              <p>Copyright <Icon type="copyright" /> 2017 崩坏3官方部门技术总监徐基欣出品</p>
             </h3>
           </Footer>
         </Layout>
